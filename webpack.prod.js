@@ -8,19 +8,5 @@ module.exports = merge(common, {
   mode: 'production',
   plugins: [
     new WebpackManifestPlugin(options),
-    plugins: [
-      new ParallelUglifyPlugin({
-        test,
-        include,
-        exclude,
-        cacheDir,
-        workerCount,
-        sourceMap,
-        uglifyJS: {
-        any es6 code that it can't parse.
-        },
-        terser: {
-        }
-      }),
   ]
 });

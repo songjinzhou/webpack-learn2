@@ -16,13 +16,13 @@ const loading = {
         loading
       }),
     ],
-    optimization: {
-      minimizer: [
-        new UglifyJsPlugin({
-          parallel: true, // 开启多核
-        }),
-      ],
-    },
+    // optimization: {
+    //   minimizer: [
+    //     new UglifyJsPlugin({
+    //       parallel: true, // 开启多核
+    //     }),
+    //   ],
+    // },
     module: {
       rules: [
         {
@@ -35,7 +35,6 @@ const loading = {
           test: /\.less$/,
           use:['style-loader', 'css-loader', 'less-loader'],
           exclude: /node_modules/,
-          include: './src'
         },
         {
           test: /\.png|svg|jpg|jpeg|gif$/,
@@ -47,10 +46,11 @@ const loading = {
         },
       ]
     },
-   output: {
-     filename: '[name].bundle.js',
-     path: path.resolve(__dirname, 'dist'),
-     clean: true,
-   },
+    output: {
+      filename: '[name].bundle.js',
+      path: path.resolve(__dirname, 'dist'),
+      clean: true,
+      publicPath: '/',
+    },
  };
 
